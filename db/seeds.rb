@@ -16,7 +16,7 @@ list_url = open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list").r
 list_parsed = JSON.parse(list_url)
 
 
-
+puts "3. Creating ingredients"
 list_parsed["drinks"].each do |item|
   ingredient = Ingredient.create(name: item["strIngredient1"])
   puts ingredient.name
@@ -25,10 +25,3 @@ list_parsed["drinks"].each do |item|
 puts "done and dusted!"
 
 
-
-# counter = 2
-# [maris_piper, la_perla, spaghetteria, binnenvisser, cafe_george].each do |restaurant|
-#   restaurant = Restaurant.create!(restaurant)
-#   puts "#{counter += 1} - Created #{restaurant.name}"
-# end
-# puts "#{counter + 1}- Done and dusted!!"
