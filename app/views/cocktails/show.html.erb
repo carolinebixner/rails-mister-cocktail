@@ -1,13 +1,25 @@
-<h3>This is some info on your favorite cocktail</h3>
-<p> Name: <%= @cocktail.name %></p>
 
 
+<div class="container">
+  <br>
 
+<h3 class="title"> Your cocktail overview!</h3>
+<br>
 
-<%= @cocktail.doses.each do |dose| %>
-<%= dose.description %>
-<%= dose.ingredient.name %>
-<%= link_to 'destroy', dose_path(dose), method : :delete, data: { confirm: "are you sure?"} %>
+<div>
+Name: <%= @cocktail.name %>
+Dose: <% @cocktail.doses.each do |dose| %>
+    <%= dose.ingredient.name %>
+    <%= dose.description %>
+    <%= link_to 'destroy', dose_path(dose), method: :delete, data: { confirm: "are you sure?"} %>
 <% end %>
+</div>
 
+<br>
+
+<%= render "doses/new", cocktail: @cocktail, dose: @dose%>
+<br>
+<div class=" btn btn-info">
 <%= link_to "All cocktails", cocktails_path %>
+</div>
+</div>
