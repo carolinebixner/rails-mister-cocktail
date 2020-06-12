@@ -17,6 +17,13 @@ Dose: <% @cocktail.doses.each do |dose| %>
 
 <br>
 
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key,
+      width: 400, height: 300, crop: :fill %>
+      <% else %>
+     <p> You haven't uploaded a picture yet!</p>
+     <% end %>
+
 <%= render "doses/new", cocktail: @cocktail, dose: @dose%>
 <br>
 <div class=" btn btn-info">
