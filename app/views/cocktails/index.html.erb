@@ -1,18 +1,22 @@
+<div>
+  <h1> Mrs Cocktail </h1>
+  <p>
+    <span id="index-banner"></span>
+  </p>
+</div>
+
 <div class='container'>
   <h1> A list of your cocktails</h1>
 
-
-
-<div class="align-right">
-
-      <% @cocktails.each do |cocktail| %>
-      <%= cocktail.name %>
-      <% cocktail.doses.each do |d| %>
-      <%= d.description %>
-      <%= d.ingredient.name %>
-      <% end %>
-      <%= link_to 'Show', cocktail_path(cocktail) %>
-      <% end %>
+<div>
+  <% @cocktails.each do |cocktail| %>
+  <%= cocktail.name %>
+  <% cocktail.doses.each do |d| %>
+  <%= d.description %>
+  <%= d.ingredient.name %>
+  <% end %>
+  <%= link_to 'Show', cocktail_path(cocktail) %>
+  <% end %>
  </div>
 
  <br>
