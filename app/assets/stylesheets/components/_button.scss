@@ -1,0 +1,16 @@
+.create-button {
+    padding: 16px 32px;
+    margin: right;
+    height: 30px;
+    background: linear-gradient(90deg, $orange, $pink);
+    text-decoration: none;
+    font: $text-font;
+    border-radius: 5px;
+    transition: 0.7s;
+    color: $white;
+
+  &:hover {
+    background: linear-gradient(90deg, $pink, $orange);
+  }
+}
+

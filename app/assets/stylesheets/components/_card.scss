@@ -1,0 +1,55 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px $gray;
+
+}
+
+// .card-title {
+//   position: absolute;
+//   justify-content: center;
+//   margin: 0 auto;
+//   font: $headers-font;
+
+// }
+
+// .card-description {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+
+//   h2 {
+//   font-size: 24px;
+//   }
+// }
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  color: yellow;
+  opacity: 0;
+
+  &:hover {
+  opacity: 0.1;
+  }
+}

@@ -1,32 +1,41 @@
-<div>
-  <h1> Mrs Cocktail </h1>
-  <p>
-    <span id="index-banner"></span>
-  </p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path 'cocktail_banner' %>');">
+  <div class="container">
+    <h1>Mrs. Cocktail!</h1>
+    <p> Keep an overview of your favorite cocktails!</p>
+    <br>
+    <br>
+    <%= link_to 'Create a new cocktail', new_cocktail_path, class: "create-button" %>
+  </div>
 </div>
 
-<div class='container'>
-  <h1> A list of your cocktails</h1>
+<br>
 
-<div>
+<div class="main-container">
+  <h1> A list of your cocktails</h1>
+<br>
+<div class="row">
   <% @cocktails.each do |cocktail| %>
-  <%= cocktail.name %>
-  <% cocktail.doses.each do |d| %>
-  <%= d.description %>
-  <%= d.ingredient.name %>
-  <% end %>
-  <%= link_to 'Show', cocktail_path(cocktail) %>
+  <div class="col-12 col-md-6 col-lg-3">
+   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?cocktail');">
+    <!--  <div class="card-title"> -->
+      <h2> <%= cocktail.name %></h2>
+      <!-- </div> -->
+      <% cocktail.doses.each do |d| %>
+<!--       <div class="card-description">
+      <%#= d.description %>
+      </div> -->
+    <!--   <div class="card-description">
+      <%#= d.ingredient.name %>
+      </div> -->
+      <% end %>
+
+      <div class='show-button color:white'>
+      <%= link_to 'Show', cocktail_path(cocktail) %>
+      </div>
+      </div>
+  </div>
   <% end %>
  </div>
 
- <br>
- <br>
-
-<div class="btn btn-info">
-  <%= link_to 'Create a new cocktail', new_cocktail_path %>
 </div>
-</div>
-
-<!--   <#% @doses.each do |dose| %>
-   <#%= @dose.ingredient.name %>
-   <#% end %> -->
